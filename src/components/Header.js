@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink ,Link } from 'react-router-dom';
 import { ROUTERS } from '../constants/Routers';
-import { LuShoppingBag } from 'react-icons/lu';
+
+
 import Cart from './Cart';
+
 
 export default function Header() {
 	const carts = useSelector((state) => state.cart.carts);
@@ -14,39 +16,37 @@ export default function Header() {
 
 	return (
 		<>
-			<div className=" h-[75px] border border-[rgba(204, 199, 199, 0.35)] sticky top-0 z-10">
-				<div className="container flex flex-row items-center justify-between h-full mx-auto">
-					<div className="">
-						<img
-							src="/images/logo.webp"
-							alt=""
-							className="w-[175px] h-[45px]"
-						/>
+			<div className=" sticky top-0 z-10 bg-black">
+				<div className="container flex flex-col mx-auto py-5 ">
+					<div className='flex flex-row justify-between w-full'>
+						<div className='flex flex-1 ' />
+						<div className='flex flex-1 items-center justify-center'>
+							<NavLink
+								to={ROUTERS.HOME}
+								className={({ isActive }) =>
+									`${isActive && 'font-bold'} `
+								}
+							>
+								<img src='./images/Logo1.png'className='h-[50px]' />
+							</NavLink>
+
+						</div>
+						<div className=" flex-1 flex flex-row items-center justify-end ">
+							<a href="#" className="text-white text-sm px-4 hover:text-blue-600">Account</a>
+							<a href="#" className="text-white text-sm px-4 hover:text-blue-600">Search</a>
+							<button className="text-white text-sm px-4 hover:text-blue-600" onClick={toggleShowCart}>
+								Cart ({carts.length})
+							</button>
+						</div>
 					</div>
-					<div className="flex flex-row gap-5">
-						<NavLink
-							to={ROUTERS.HOME}
-							className={({ isActive }) =>
-								`${isActive && 'font-bold'}`
-							}
-						>
-							Home
-						</NavLink>
-						<NavLink
-							to={ROUTERS.PRODUCTS}
-							className={({ isActive }) =>
-								`${isActive && 'font-bold'}`
-							}
-						>
-							Products
-						</NavLink>
+					<div className="mt-4 text-center">
+						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">ALL</a>
+						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">APPAREL</a>
+						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">ACCESSORIES</a>
+						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">COLLECTIBLES</a>
+						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">COLLABORATIONS</a>
+						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">SALE</a>
 					</div>
-					<button className="relative" onClick={toggleShowCart}>
-						<LuShoppingBag size={20} />
-						<p className="absolute top-[-10px] right-[-10px] text-xs font-bold">
-							{carts.length}
-						</p>
-					</button>
 				</div>
 			</div>
 			{isShowCart && <Cart toggleShowCart={toggleShowCart} />}

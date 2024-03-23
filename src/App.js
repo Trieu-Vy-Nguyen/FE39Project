@@ -7,10 +7,10 @@ import {
 	RouterProvider,
 	createRoutesFromElements,
 	Route,
+	
 } from 'react-router-dom';
 import Layout from './components/Layout';
-import Products from './pages/Products';
-import ProductDetail from './pages/ProductDetail';
+
 import Login from './pages/Login';
 import { ConfigProvider } from 'antd';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -19,9 +19,9 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Layout />}>
 			<Route index element={<Home />} />
-			<Route path="products" element={<Products />} />
-			<Route path="products/:slug" element={<ProductDetail />} />
-			. <Route path="login" element={<Login />} />
+				
+			
+			<Route path="login" element={<Login />} />
 		</Route>
 	)
 );

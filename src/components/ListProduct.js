@@ -3,7 +3,9 @@ import { addProductToCart } from '../store/redux/CartSlice';
 import { message } from 'antd';
 import { useEffect } from 'react';
 import { getProductsRequest } from '../store/redux/ProductSlice';
-import ProductLoading from './ProductLoading';
+
+
+
 function List() {
 	const { products, fetching } = useSelector((state) => state.product);
 	const dispatch = useDispatch();
@@ -22,54 +24,172 @@ function List() {
 	}, []);
 
 	return (
-		<div className="container py-10 mx-auto">
-			<div className="card">
-				<div className="mb-6 text-center">
-					<h2 className="text-3xl">Best selling fashion items</h2>
-					<h4 className="mt-4">
-						Base optimal relaxation unlock my. Asserts too invite
-						web cause eow can breakout ocean create.
-					</h4>
+		<div className=''>
+			<h1 className='font-bold text-center py-10 text-2xl'>ALL PRODUCT </h1>
+			<div className='flex flex-row-4 justify-around py-10'>
+				<div className='w-[325px] h-[331px] flex flex-col '>
+					<a href='#'>
+						<img src='./images/Product1.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2024 T1 Uniform Jacket</p></a>
+					<a href='#'><p className='text-center'>3.914.021 đ</p></a>
+
 				</div>
 
-				{fetching ? (
-					<ProductLoading />
-				) : (
-					<div className="grid grid-cols-1 gap-5 md:grid-cols-4">
-						{products.map((item, index) => (
-							<div
-								className="group"
-								key={index}
-								onClick={() => onAdd(item)}
-							>
-								<div className="relative overflow-hidden ">
-									<img
-										src={item.image}
-										alt={item.name}
-										className="w-full"
-									/>
-									<img
-										src={item.imageHover}
-										alt={item.name}
-										className="absolute top-0 left-0 z-20 transition-all duration-200 ease-linear opacity-0 group-hover:opacity-100 group-hover:scale-125"
-									/>
-									<div className="absolute left-0 right-0 z-30 flex items-center justify-center transition-all duration-200 ease-linear delay-150 -bottom-20 group-hover:bottom-10">
-										<button className="hover:bg-[#DF4141] border py-[10px] px-5 text-sm hover:text-white bg-white transition-all duration-200">
-											Add to cart
-										</button>
-									</div>
-								</div>
-								<div className="pt-4 text-center">
-									<p className="font-semibold">{item.name}</p>
-									<p>$ {item.price}</p>
-								</div>
-							</div>
-						))}
-					</div>
-				)}
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD2.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2024 T1 Uniform Jersey </p></a>
+					<a href='#'><p className='text-center'>2.716.340 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'  >
+					<a href='#'>
+						<img src='./images/PD3.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2024 T1 Uniform Jersey Sponsor Making Kit</p></a>
+					<a href='#'><p className='text-center'>276.664 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD4.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Logo Fleece Jacket</p></a>
+					<a href='#'><p className='text-center'>1.836.044 đ</p></a>
+
+				</div>
+
+
+			</div>
+			<div className='flex flex-row-4 justify-around mt-10 py-10'>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD5.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2024 T1 Cheering Gymsack</p></a>
+					<a href='#'><p className='text-center'>377.269 đ</p></a>
+
+				</div>
+
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD6.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Player Hoodie - Faker</p></a>
+					<a href='#'><p className='text-center'>1.634.834 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD7.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Player Hoodie - Zeus</p></a>
+					<a href='#'><p className='text-center'>1.634.834 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD8.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Player Hoodie - Oner</p></a>
+					<a href='#'><p className='text-center'>1.634.834 đ</p></a>
+
+				</div>
+
+
+			</div>
+
+			<div className='flex flex-row-4 justify-around mt-10 py-10'>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD9.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Player Hoodie - Gumayusi</p></a>
+					<a href='#'><p className='text-center'>1.634.834 đ</p></a>
+
+				</div>
+
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD10.jpg' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Player Hoodie - Keria</p></a>
+					<a href='#'><p className='text-center'>1.634.834 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD11.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2023 World Champion T1 Desk Mat Ver.1</p></a>
+					<a href='#'><p className='text-center'>829.993 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD12.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2023 World Champion T1 Desk Mat Ver.2</p></a>
+					<a href='#'><p className='text-center'>829.993 đ</p></a>
+
+				</div>
+
+
+			</div>
+
+			<div className='flex flex-row-4 justify-around mt-10 py-10'>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD13.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>T1 Logo Badge - Champion Edition</p></a>
+					<a href='#'><p className='text-center'>251.513 đ</p></a>
+
+				</div>
+
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD14.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2024 T1 Calendar</p></a>
+					<a href='#'><p className='text-center'>377.269 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD15.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>2024 T1 Fabric Calendar</p></a>
+					<a href='#'><p className='text-center'>452.723 đ</p></a>
+
+				</div>
+				<div className='w-[325px] h-[331px]  flex flex-col'>
+					<a href='#'>
+						<img src='./images/PD16.webp' />
+					</a>
+					<a href='#'><p className='text-center font-semibold '>[T1 X MASTERCARD] Player Emblem Jersey</p></a>
+					<a href='#'><p className='text-center'>2.464.827 đ</p></a>
+
+				</div>
+
+
+
+			</div>
+
+			<div className=' w-[90%] mt-10 flex justify-beetween ml-10'>
+					<div className='flex-1'></div>
+					<button type='' className='px-[10px] py-[18px] bg-black text-white flex-1 '>
+						VIEW MORE
+					</button>
+					<div className='flex-1'></div>
 			</div>
 		</div>
+
+
 	);
+
 }
 
 export default List;
