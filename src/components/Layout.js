@@ -31,14 +31,18 @@ import Nike from '../pages/Collaboration/Nike';
 import Sambypen from '../pages/Collaboration/Sambypen';
 import Sale from '../pages/Sale/Sale';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
+import CheckItem from '../pages/CheckItem';
+import Carts from '../pages/Carts';
+
 
 export default function Layout() {
 	return (
 		<div className="min-h-screen">
 			<Header />
-			<Login />
+			
 
-			{/* <Routes>
+			<Routes>
 				<Route path="/service" element={<Service />} />
 			</Routes>
 
@@ -49,7 +53,7 @@ export default function Layout() {
 			<div className="container mx-auto">
 				<Outlet />
 			</div>
-			<Footer /> */}
+			<Footer />
 		</div>
 	);
 }

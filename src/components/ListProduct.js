@@ -7,21 +7,7 @@ import { getProductsRequest } from '../store/redux/ProductSlice';
 
 
 function List() {
-	const { products, fetching } = useSelector((state) => state.product);
-	const dispatch = useDispatch();
-
-	const onAdd = (newProduct) => {
-		dispatch(addProductToCart(newProduct));
-		message.success('Thêm sản phẩm thành công');
-	};
-
-	const getProducts = () => {
-		dispatch(getProductsRequest());
-	};
-
-	useEffect(() => {
-		getProducts();
-	}, []);
+	
 
 	return (
 		<div className=''>
@@ -180,9 +166,9 @@ function List() {
 
 			<div className=' w-[90%] mt-10 flex justify-beetween ml-10'>
 					<div className='flex-1'></div>
-					<button type='' className='px-[10px] py-[18px] bg-black text-white flex-1 '>
+					<a href="./components/Layout.js" className='text-center px-[10px] py-[18px] bg-black text-white flex-1 '>
 						VIEW MORE
-					</button>
+					</a>
 					<div className='flex-1'></div>
 			</div>
 		</div>

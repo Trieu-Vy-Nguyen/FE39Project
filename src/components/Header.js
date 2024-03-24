@@ -8,6 +8,8 @@ import { ROUTERS } from '../constants/Routers';
 import Cart from './Cart';
 
 
+
+
 export default function Header() {
 	const carts = useSelector((state) => state.cart.carts);
 
@@ -16,7 +18,7 @@ export default function Header() {
 
 	return (
 		<>
-			<div className=" sticky top-0 z-10 bg-black">
+			<div className=" sticky top-0 z-10 bg-black h-[180px]">
 				<div className="container flex flex-col mx-auto py-5 ">
 					<div className='flex flex-row justify-between w-full'>
 						<div className='flex flex-1 ' />
@@ -27,25 +29,56 @@ export default function Header() {
 									`${isActive && 'font-bold'} `
 								}
 							>
-								<img src='./images/Logo1.png'className='h-[50px]' />
+								<button><img src='./images/Logo1.png ' className='h-[50px] ' /></button>
 							</NavLink>
 
 						</div>
 						<div className=" flex-1 flex flex-row items-center justify-end ">
 							<a href="#" className="text-white text-sm px-4 hover:text-blue-600">Account</a>
-							<a href="#" className="text-white text-sm px-4 hover:text-blue-600">Search</a>
+							
 							<button className="text-white text-sm px-4 hover:text-blue-600" onClick={toggleShowCart}>
 								Cart ({carts.length})
 							</button>
 						</div>
 					</div>
-					<div className="mt-4 text-center">
-						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">ALL</a>
-						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">APPAREL</a>
-						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">ACCESSORIES</a>
-						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">COLLECTIBLES</a>
-						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">COLLABORATIONS</a>
-						<a href="#" className="text-white text-lg p-12 hover:text-blue-600 ">SALE</a>
+					<div className=" text-center flex justify-center space-x-4">
+						
+						<div className='parent flex flex-col text-white  text-lg p-10 cursor-pointer'> APPAREL
+									
+						<a href="#" className="child hidden text-black  text-lg p-3 mt-5 hover:text-blue-600 bg-white">ALL</a>
+						<a href="#" className="child hidden text-black  text-lg p-3 hover:text-blue-600 bg-white">SHIRT</a>
+						<a href="#" className="child hidden text-black  text-lg p-3 hover:text-blue-600 bg-white">HOODIE & SWEARSHIRT</a>
+						<a href="#" className="child hidden text-black  text-lg p-3 hover:text-blue-600 bg-white">JACKET</a>
+						<a href="#" className="child hidden text-black  text-lg p-3 hover:text-blue-600 bg-white">PAINTS</a>
+						</div>
+									
+						<div className='parent flex flex-col text-white text-lg p-10 cursor-pointer'> ACCESORIES
+									
+						<a href="#" className="child hidden text-black  text-lg p-5 mt-5 hover:text-blue-600 bg-white">HEADWEAR</a>
+						<a href="#" className="child hidden text-black  text-lg p-5 hover:text-blue-600 bg-white">FOODWEAR</a>
+						<a href="#" className="child hidden text-black  text-lg p-5 hover:text-blue-600 bg-white">BAG</a>
+						
+						</div>
+
+						<div className='parent flex flex-col text-white text-lg p-10 cursor-pointer'> COLLECTIBLES
+									
+						<a href="#" className="child hidden text-black  text-lg p-5 mt-5 hover:text-blue-600 bg-white">PINS</a>
+						<a href="#" className="child hidden text-black  text-lg p-5 hover:text-blue-600 bg-white">KEYCHAINS</a>
+						<a href="#" className="child hidden text-black  text-lg p-5 hover:text-blue-600 bg-white">DRINKWARE</a>
+						
+						</div>
+
+						<div className='parent flex flex-col text-white text-lg p-10 cursor-pointer'> COLLABORATION
+									
+						<a href="#" className="child hidden text-black  text-lg p-5 mt-5 hover:text-blue-600 bg-white">T1 X NIKE</a>
+						<a href="#" className="child hidden text-black  text-lg p-5 hover:text-blue-600 bg-white">T1 X SAMBYPEN</a>
+						
+						
+						</div>
+					
+					
+
+						<a href="#" className="text-white text-lg p-10 hover:text-blue-600 ">SALE</a>
 					</div>
 				</div>
 			</div>

@@ -15,3 +15,15 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+
+.parent:hover .child {
+	@apply flex;
+  }
+
+
+  @media (max-width: 767px) {
+	.child {
+	  @apply flex;
+	}
+  } 
